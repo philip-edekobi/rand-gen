@@ -51,8 +51,10 @@ function App () {
   }, 3000);
 
   async function setISSLocation () {
-    const resp = await axios.get ('//api.open-notify.org/iss-now.json');
-    const data = await resp.data['iss_position'];
+    const resp = await axios.get (
+      'https://api.wheretheiss.at/v1/satellites/25544'
+    );
+    const data = await resp.data;
 
     setIss ({lon: data.longitude, lat: data.latitude});
   }
