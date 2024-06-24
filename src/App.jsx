@@ -51,7 +51,7 @@ function App () {
   }, 3000);
 
   async function setISSLocation () {
-    const resp = await axios.get ('http://api.open-notify.org/iss-now.json');
+    const resp = await axios.get ('//api.open-notify.org/iss-now.json');
     const data = await resp.data['iss_position'];
 
     setIss ({lon: data.longitude, lat: data.latitude});
